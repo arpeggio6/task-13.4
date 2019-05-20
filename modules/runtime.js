@@ -1,4 +1,5 @@
 var os = require('os');
+var colors = require('colors');
 
 function runtime() {
 	var uptime = os.uptime();
@@ -7,11 +8,11 @@ function runtime() {
 	var seconds = uptime - (hours * 3600) - (minutes * 60);
 
 	if (hours){
-		console.log('Uptime: =', hours, 'h', minutes, 'min', seconds, 'sec');
+		console.log(colors.green('Uptime:'), hours, 'h', minutes, 'min', seconds, 'sec');
 	} else if (minutes) {
-		console.log('Uptime: =', minutes, 'min', seconds, 'sec');
+		console.log(colors.green('Uptime:'), minutes, 'min', seconds, 'sec');
 	} else {
-		console.log('Uptime: =', seconds, 'sec');
+		console.log(colors.green('Uptime:'), seconds, 'sec');
 	}
 }
 

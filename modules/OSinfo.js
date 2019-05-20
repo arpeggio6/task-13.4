@@ -1,4 +1,5 @@
 var os = require('os');
+var colors = require('colors');
 var runtime = require('./runtime');
 
 function getOSinfo() {
@@ -11,11 +12,11 @@ function getOSinfo() {
     var release = os.release();
     var cpu = os.cpus()[0].model;
     var userInfo = os.userInfo();
-    console.log('System:', type);
-    console.log('Release:', release);
-    console.log('CPU model:', cpu);
+    console.log(colors.grey('System:'), type);
+    console.log(colors.red('Release:'), release);
+    console.log(colors.blue('CPU model:'), cpu);
     runtime.print();
-    console.log('User name:', userInfo.username);
+    console.log(colors.yellow('User name:'), userInfo.username);
     console.log('Home dir:', userInfo.homedir);
 }
 
