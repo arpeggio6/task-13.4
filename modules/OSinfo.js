@@ -15,7 +15,7 @@ function getOSinfo() {
     console.log(colors.grey('System:'), type);
     console.log(colors.red('Release:'), release);
     console.log(colors.blue('CPU model:'), cpu);
-    runtime.print();
+    runtime.print(os.uptime());
     console.log(colors.yellow('User name:'), userInfo.username);
     console.log('Home dir:', userInfo.homedir);
 }
